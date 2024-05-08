@@ -1,0 +1,44 @@
+/* Estilos del navbar */
+.navbar {
+  position: fixed;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  background-color: #fff; /* Cambiamos el color de fondo del navbar a blanco */
+}
+
+/* Estilos del logo */
+.navbar-logo {
+  padding: 5px; /* Espacio alrededor del logo */
+}
+
+.logo {
+  width: 100px;
+}
+
+.navbar-nav {
+  display: flex;
+  justify-content: center; /* Centrar los elementos horizontalmente */
+  gap: 20px; /* Espacio entre las opciones */
+  list-style-type: none;
+  margin: 0; /* Eliminamos el margen */
+  padding: 0;
+  width: 100%; /* Asegura que la barra de navegación ocupe todo el ancho */
+}
+
+.navbar-nav li {
+  color: #000; /* Color de texto del navbar */
+  cursor: pointer;
+  font-size: 18px;
+}
+
+.navbar-nav li a {
+  color: #000; /* Color de texto del navbar */
+  text-decoration: none;
+}
+
+.navbar-nav li:hover {
+  text-decoration: underline; /* Subrayado al pasar el cursor */
+}
