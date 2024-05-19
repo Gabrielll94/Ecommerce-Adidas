@@ -1,0 +1,37 @@
+.footpage {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding: 20px;
+  background-color: #333;
+  color: #fff;
+}
+
+.footpage-section {
+  flex: 1 1 100px;
+  margin: 10px;
+}
+
+.footpage-section h4 {
+  align-items: center;
+  margin-bottom: 10px;
+  font-size: 18px;
+  color: #fff;
+}
+
+.footpage-section ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.footpage-section li {
+  margin-bottom: 5px;
+  color: #ccc;
+  text-decoration: none;
+}
+
+.footpage-section li:hover {
+  color: #fff;
+  text-decoration: underline;
+  cursor: pointer;
+}

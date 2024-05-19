@@ -7,7 +7,6 @@ const NavBar = () => {
   const [isPanelOpen, setIsPanelOpen] = useState(false);
   const [activePanel, setActivePanel] = useState("");
 
-  // Funcion para manejar la apertura y cierre de los paneles
   function handleTogglePanel(panel) {
     if (activePanel === panel) {
       setIsPanelOpen(false);
@@ -17,20 +16,26 @@ const NavBar = () => {
       setActivePanel(panel);
     }
   }
+
   return (
     <nav className="navbar">
-      {/* Logo */}
-      <div className="logo-container">
-        <img src={Logo} alt="Adidas Logo" className="logo" />
+      <div className="top-section">
+        <div className="logo-container">
+          <img src={Logo} alt="Adidas Logo" className="logo" />
+        </div>
+        <div className="top-links">
+          <p>Ayuda</p>
+          <p>Seguimiento de pedidos</p>
+          <p>Unite al club</p>
+        </div>
       </div>
-
       <ul className="navbar-nav">
         <li
           className="navbar-item"
           onMouseEnter={() => handleTogglePanel("Mujer")}
         >
           <a href="/mujer">MUJER</a>
-          {activePanel && isPanelOpen === "Mujer" && (
+          {activePanel === "Mujer" && isPanelOpen && (
             <div className="dropdown-content"></div>
           )}
         </li>
@@ -38,8 +43,8 @@ const NavBar = () => {
           className="navbar-item"
           onMouseEnter={() => handleTogglePanel("Hombre")}
         >
-          <a href="/mujer">HOMBRE</a>
-          {activePanel && isPanelOpen === "Hombre" && (
+          <a href="/hombre">HOMBRE</a>
+          {activePanel === "Hombre" && isPanelOpen && (
             <div className="dropdown-content"></div>
           )}
         </li>
@@ -47,8 +52,8 @@ const NavBar = () => {
           className="navbar-item"
           onMouseEnter={() => handleTogglePanel("Niño")}
         >
-          <a href="/mujer">NIÑO</a>
-          {activePanel && isPanelOpen === "Niño" && (
+          <a href="/nino">NIÑO</a>
+          {activePanel === "Niño" && isPanelOpen && (
             <div className="dropdown-content"></div>
           )}
         </li>
@@ -56,8 +61,8 @@ const NavBar = () => {
           className="navbar-item"
           onMouseEnter={() => handleTogglePanel("Mundo Adidas")}
         >
-          <a href="/mujer">MUNDO ADIDAS</a>
-          {activePanel && isPanelOpen === "Mundo Adidas" && (
+          <a href="/mundo-adidas">MUNDO ADIDAS</a>
+          {activePanel === "Mundo Adidas" && isPanelOpen && (
             <div className="dropdown-content"></div>
           )}
         </li>
@@ -65,13 +70,15 @@ const NavBar = () => {
           className="navbar-item"
           onMouseEnter={() => handleTogglePanel("Oulet")}
         >
-          <a href="/mujer">OULET</a>
-          {activePanel && isPanelOpen === "Oulet" && (
+          <a href="/oulet">OULET</a>
+          {activePanel === "Oulet" && isPanelOpen && (
             <div className="dropdown-content"></div>
           )}
         </li>
       </ul>
-      <SearchBar />
+      <div className="search-bar-container">
+        <SearchBar />
+      </div>
     </nav>
   );
 };

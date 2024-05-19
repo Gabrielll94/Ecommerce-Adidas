@@ -1,31 +1,38 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import "./landingpage.css";
 import NavBar from "../NavBar/NavBar";
 import adidasImage from "../assets/adidas.jpg";
 import adidasImage1 from "../assets/adidas1.jpg";
+import Footpage from "../Footpage/Footpage";
 
 const Landingpage = () => {
-  document.addEventListener("mousemove", function (e) {
-    const commentsContainer = document.querySelector(".comments-container");
-    mouseX = e.clientX;
-    mouseY = e.clientY;
-    commentsContainer.style.transform = `translate(${mouseX}px. ${mouseY}px)`;
-  });
+  const [isCommentsOpen, setIsCommentsOpen] = useState(false);
+
+  const handleCommentsToggle = () => {
+    setIsCommentsOpen(!isCommentsOpen);
+  };
 
   return (
     <div className="landing-page">
       <NavBar />
-      <div className="comments-container">
-        <div className="comments">COMENTARIOS</div>
+      <div className={`comments-container ${isCommentsOpen ? "open" : ""}`}>
+        <div className="comments-header" onClick={handleCommentsToggle}>
+          COMENTARIOS
+        </div>
+        {isCommentsOpen && (
+          <div className="comments-content">
+            <p>Aquí puedes dejar tus comentarios</p>
+            <a href="#">Opción 1</a>
+            <a href="#">Opción 2</a>
+            <a href="#">Opción 3</a>
+          </div>
+        )}
       </div>
       {/* Banner principal */}
       <section className="banner">
         <div className="banner-content">
-          <img src={adidasImage} alt="imagen-adidas"></img>
-          <img src={adidasImage1} alt="imagen-adidas1"></img>
-          <button type="button" className="btn btn-primary">
-            Shop Now!
-          </button>
+          <img src={adidasImage} alt="imagen-adidas" />
+          <img src={adidasImage1} alt="imagen-adidas1" />
         </div>
       </section>
 
@@ -34,11 +41,10 @@ const Landingpage = () => {
         <h2>Ofertas</h2>
       </section>
 
-      {/* Reviews */}
-      <section className="reviews">Reviews</section>
-
       {/* Footer */}
-      <footer className="footer"></footer>
+      <footer className="footer">
+        <Footpage />
+      </footer>
     </div>
   );
 };
