@@ -1,4 +1,67 @@
 /* landingpage.css */
+.Popular {
+  padding: 20px;
+}
+
+.Popular h1 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.Popular ul {
+  font-size: 25px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.Popular li {
+  background-color: #f1f1f1;
+  padding: 20px;
+  text-align: center;
+  font-size: 50px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3 ease;
+}
+
+.Popular li:hover {
+  background-color: #cccc;
+}
+
+.offers {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  padding: 20px;
+  background-color: yellow;
+}
+
+.offers h1 {
+  margin: 0;
+  font-size: 1.5rem;
+}
+
+.register-button {
+  padding: 10px 20px;
+  background-color: #000;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  font-size: 1rem;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+.register-button:hover {
+  background-color: #333;
+}
 
 .comments-container {
   position: fixed;

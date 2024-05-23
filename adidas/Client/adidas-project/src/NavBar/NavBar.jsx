@@ -75,10 +75,10 @@ const NavBar = () => {
             <div className="dropdown-content"></div>
           )}
         </li>
+        <div className="search-bar-container">
+          <SearchBar />
+        </div>
       </ul>
-      <div className="search-bar-container">
-        <SearchBar />
-      </div>
     </nav>
   );
 };

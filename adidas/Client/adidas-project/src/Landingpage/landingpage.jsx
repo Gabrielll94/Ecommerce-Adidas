@@ -36,9 +36,22 @@ const Landingpage = () => {
         </div>
       </section>
 
+      <section className="Popular">
+        <h1>Popular ahora</h1>
+        <ul>
+          <li>Forum</li>
+          <li>Samba</li>
+          <li>Campus</li>
+          <li>Terrex</li>
+          <li>River</li>
+          <li>Zapatillas-hombre</li>
+        </ul>
+      </section>
+
       {/* Seccion de ofertas */}
       <section className="offers">
-        <h2>Ofertas</h2>
+        <h1>UNETE AL CLUB Y CONSIGUE 300 PUNTOS DE BIENVENIDA</h1>
+        <button className="register-button">REGÍSTRATE GRATIS ➡</button>
       </section>
 
       {/* Footer */}

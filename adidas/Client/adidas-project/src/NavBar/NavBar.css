@@ -3,9 +3,9 @@
   position: fixed;
   width: 100%;
   display: flex;
-  flex-direction: column;
   align-items: center;
-  padding: 20px;
+  flex-direction: column;
+  padding: 30px;
   background-color: #fff;
   justify-content: space-between; /* Ajuste para distribuir espacio */
 }

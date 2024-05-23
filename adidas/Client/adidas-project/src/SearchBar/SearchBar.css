@@ -1,6 +1,7 @@
 .search-bar {
   display: flex;
   align-items: center;
+  margin: -35px 75px;
 }
 
 .search-bar input {
