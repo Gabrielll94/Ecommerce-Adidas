@@ -4,6 +4,8 @@ import NavBar from "../NavBar/NavBar";
 import adidasImage from "../assets/adidas.jpg";
 import adidasImage1 from "../assets/adidas1.jpg";
 import Footpage from "../Footpage/Footpage";
+import Products from "../Products/Products";
+import productsData from "../assets/products.json";
 
 const Landingpage = () => {
   const [isCommentsOpen, setIsCommentsOpen] = useState(false);
@@ -52,6 +54,16 @@ const Landingpage = () => {
       <section className="offers">
         <h1>UNETE AL CLUB Y CONSIGUE 300 PUNTOS DE BIENVENIDA</h1>
         <button className="register-button">REGÍSTRATE GRATIS ➡</button>
+      </section>
+
+      {/* Seccion de Productos */}
+      <section className="products-section">
+        <h1>Productos</h1>
+        <div className="products-grid">
+          {productsData.map((product) => (
+            <Products key={productsData.id} product={product} />
+          ))}
+        </div>
       </section>
 
       {/* Footer */}
