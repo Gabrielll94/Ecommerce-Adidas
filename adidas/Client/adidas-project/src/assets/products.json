@@ -1,8 +1,12 @@
 [
     {
         "id":1,
-        "name": "River Plate",
-        "image":"https://brand.assets.adidas.com/image/upload/imagen_3_d_2c1b9fe1bf.jpg"
+        "name": "Tercer camiseta River Plate",
+        "price": "$125.000"
+        
     },
-    {}
+    {
+        "id":2,
+        "name": "Camiseta de la Seleccion Argentina"
+    }
 ]

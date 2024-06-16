@@ -1,5 +1,12 @@
 import React from "react";
 import "./Footpage.css";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {
+  faFacebook,
+  faTwitter,
+  faInstagram,
+  faYoutube,
+} from "@fortawesome/free-brands-svg-icons";
 
 const Footpage = () => {
   return (
@@ -98,14 +105,36 @@ const Footpage = () => {
 
       <div className="footpage-section">
         <h4>Siguenos</h4>
-        <ul>
-          <li>Facebook</li>
-          <li>Instagram</li>
-          <li>Twitter</li>
-          <li>Picassa</li>
-          <li>Tik Tok</li>
-          <li>Youtube</li>
-        </ul>
+        <div className="social-icons">
+          <a
+            href="https://www.facebook.com/adidas"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <FontAwesomeIcon icon={faFacebook} />
+          </a>
+          <a
+            href="https://twitter.com/adidas"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <FontAwesomeIcon icon={faTwitter} />
+          </a>
+          <a
+            href="https://www.instagram.com/adidas/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <FontAwesomeIcon icon={faInstagram} />
+          </a>
+          <a
+            href="https://www.youtube.com/user/adidas"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <FontAwesomeIcon icon={faYoutube} />
+          </a>
+        </div>
       </div>
     </div>
   );
