@@ -4,18 +4,15 @@ import "./NavBar.css";
 import SearchBar from "../SearchBar/SearchBar";
 
 const NavBar = () => {
-  const [isPanelOpen, setIsPanelOpen] = useState(false);
   const [activePanel, setActivePanel] = useState("");
 
-  function handleTogglePanel(panel) {
-    if (activePanel === panel) {
-      setIsPanelOpen(false);
-      setActivePanel("");
-    } else {
-      setIsPanelOpen(true);
-      setActivePanel(panel);
-    }
-  }
+  const handleMouseEnter = (panel) => {
+    setActivePanel(panel);
+  };
+
+  const handleMouseLeave = () => {
+    setActivePanel("");
+  };
 
   return (
     <nav className="navbar">
@@ -32,48 +29,52 @@ const NavBar = () => {
       <ul className="navbar-nav">
         <li
           className="navbar-item"
-          onMouseEnter={() => handleTogglePanel("Mujer")}
+          onMouseEnter={() => handleMouseEnter("Mujer")}
+          onMouseLeave={handleMouseLeave}
         >
           <a href="/mujer">MUJER</a>
-          {activePanel === "Mujer" && isPanelOpen && (
-            <div className="dropdown-content"></div>
+          {activePanel === "Mujer" && (
+            <div className="dropdown-content">
+              <a href="/mujer/ropa">Ropa</a>
+              <a href="/mujer/ropa">Zapatillas</a>
+              <a href="/mujer/ropa">Accesorios</a>
+              <a href="/mujer/ropa">Nuevo</a>
+            </div>
           )}
         </li>
         <li
           className="navbar-item"
-          onMouseEnter={() => handleTogglePanel("Hombre")}
+          onMouseEnter={() => handleMouseEnter("Hombre")}
+          onMouseLeave={handleMouseLeave}
         >
           <a href="/hombre">HOMBRE</a>
-          {activePanel === "Hombre" && isPanelOpen && (
-            <div className="dropdown-content"></div>
-          )}
+          {activePanel === "Hombre" && <div className="dropdown-content"></div>}
         </li>
         <li
           className="navbar-item"
-          onMouseEnter={() => handleTogglePanel("Niño")}
+          onMouseEnter={() => handleMouseEnter("Niño")}
+          onMouseLeave={handleMouseLeave}
         >
           <a href="/nino">NIÑO</a>
-          {activePanel === "Niño" && isPanelOpen && (
-            <div className="dropdown-content"></div>
-          )}
+          {activePanel === "Niño" && <div className="dropdown-content"></div>}
         </li>
         <li
           className="navbar-item"
-          onMouseEnter={() => handleTogglePanel("Mundo Adidas")}
+          onMouseEnter={() => handleMouseEnter("Mundo Adidas")}
+          onMouseLeave={handleMouseLeave}
         >
           <a href="/mundo-adidas">MUNDO ADIDAS</a>
-          {activePanel === "Mundo Adidas" && isPanelOpen && (
+          {activePanel === "Mundo Adidas" && (
             <div className="dropdown-content"></div>
           )}
         </li>
         <li
           className="navbar-item"
-          onMouseEnter={() => handleTogglePanel("Oulet")}
+          onMouseEnter={() => handleMouseEnter("Oulet")}
+          onMouseLeave={handleMouseLeave}
         >
           <a href="/oulet">OULET</a>
-          {activePanel === "Oulet" && isPanelOpen && (
-            <div className="dropdown-content"></div>
-          )}
+          {activePanel === "Oulet" && <div className="dropdown-content"></div>}
         </li>
         <div className="search-bar-container">
           <SearchBar />
