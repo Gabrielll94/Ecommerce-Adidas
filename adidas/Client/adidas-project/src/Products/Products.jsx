@@ -1,13 +1,21 @@
-import React from "react";
+import React, { useContext } from "react";
 import PropTypes from "prop-types";
 import "./Products.css";
+import { cartContext } from "../ShoppingCart/cartContext";
 
 const Products = ({ product }) => {
+  const { addToCart } = useContext(cartContext);
+
+  const handleAddToCart = () => {
+    addToCart(product);
+  };
+
   return (
     <div className="product">
       <img src={product.image} alt={product.name} />
       <h2>{product.name}</h2>
-      <button>Agregar al carrito</button>
+      <p>{product.price}</p>
+      <button onClick={handleAddToCart}>Agregar al carrito</button>
     </div>
   );
 };

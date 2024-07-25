@@ -5,6 +5,7 @@ import adidasImage from "../assets/a.jpg";
 import adidasImage1 from "../assets/adidas1.jpg";
 import Footpage from "../FootPage/Footpage";
 import Products from "../Products/Products";
+import Cart from "../Cart/Cart";
 import productsData from "../assets/products.json";
 import product1 from "../assets/R.jpg";
 import product2 from "../assets/arg.jpg";
@@ -141,6 +142,11 @@ const Landingpage = () => {
             <Products key={product.id} product={product} />
           ))}
         </div>
+      </section>
+
+      {/* Seccion de carrio */}
+      <section className="cart-section">
+        <Cart />
       </section>
 
       {/* Footer */}
