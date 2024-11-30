@@ -1,0 +1,42 @@
+.faq-section {
+  padding: 20px;
+}
+
+.faq-list {
+  list-style-type: none;
+  padding: 0;
+}
+
+.faq-item {
+  margin-bottom: 15px;
+}
+
+.faq-item h3 {
+  font-weight: bold;
+  color: #333;
+}
+
+.faq-item p {
+  margin: 5px 0;
+  color: #555;
+}
+
+.back-to-main {
+  margin-top: 20px;
+  text-align: center;
+}
+
+.main-menu-button {
+  background-color: #007bff;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s ease;
+}
+
+.main-menu-button:hover {
+  background-color: #0056b3;
+}

@@ -1,12 +1,18 @@
 [
     {
         "id":1,
-        "name": "Tercer camiseta River Plate",
+        "name": "Camiseta River Plate",
         "price": "$125.000"
         
     },
     {
         "id":2,
-        "name": "Camiseta de la Seleccion Argentina"
+        "name": "Camiseta de la Seleccion Argentina",
+        "price": "$150.000"
+    },
+    {
+        "id":3,
+        "name": "Camiseta de la Seleccion Argentina",
+        "price": "$150.000"
     }
 ]

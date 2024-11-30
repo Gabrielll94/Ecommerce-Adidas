@@ -14,7 +14,7 @@ const Products = ({ product }) => {
     <div className="product">
       <img src={product.image} alt={product.name} />
       <h2>{product.name}</h2>
-      <p>{product.price}</p>
+      <p>${product.price}</p>
       <button onClick={handleAddToCart}>Agregar al carrito</button>
     </div>
   );

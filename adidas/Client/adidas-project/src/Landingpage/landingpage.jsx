@@ -1,18 +1,21 @@
 import React, { useState } from "react";
 import "./landingpage.css";
 import NavBar from "../NavBar/NavBar";
-import adidasImage from "../assets/a.jpg";
+import adidasImage from "../assets/admessi.jpg";
 import adidasImage1 from "../assets/adidas1.jpg";
 import Footpage from "../FootPage/Footpage";
 import Products from "../Products/Products";
 import Cart from "../Cart/Cart";
 import productsData from "../assets/products.json";
-import product1 from "../assets/R.jpg";
+import product1 from "../assets/RP.jpg";
 import product2 from "../assets/arg.jpg";
+import product3 from "../assets/AZNE.jpg";
+import { useNavigate } from "react-router-dom";
 
 const Landingpage = () => {
   const [isCommentsOpen, setIsCommentsOpen] = useState(false);
   const [selectedRating, setSelectedRating] = useState(null);
+  const navigate = useNavigate();
 
   const handleCommentsToggle = () => {
     setIsCommentsOpen(!isCommentsOpen);
@@ -30,6 +33,7 @@ const Landingpage = () => {
       alert("No has seleccionado una puntuación");
     }
   };
+
   const productsWithImages = productsData.map((product) => {
     let image = "";
     switch (product.id) {
@@ -39,10 +43,13 @@ const Landingpage = () => {
       case 2:
         image = product2;
         break;
+      case 3:
+        image = product3;
+        break;
       default:
         break;
     }
-    return { ...product, image };
+    return { ...product, image, price: Number(product.price) };
   });
 
   return (
@@ -119,7 +126,7 @@ const Landingpage = () => {
       <section className="Popular">
         <h1>Popular ahora</h1>
         <ul>
-          <li>Forum</li>
+          <li onClick={() => navigate("/forum")}>Forum</li>
           <li>Samba</li>
           <li>Campus</li>
           <li>Terrex</li>
