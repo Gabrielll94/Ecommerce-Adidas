@@ -27,7 +27,7 @@ const NavBar = () => {
         </div>
         <div className="top-links">
           <a href="/faq">Ayuda</a>
-          <p>Seguimiento de pedidos</p>
+          <a href="/seguimiento-pedido">Seguimiento de pedidos</a>
           <p>Unite al club</p>
         </div>
       </div>

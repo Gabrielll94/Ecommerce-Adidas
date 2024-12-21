@@ -4,6 +4,7 @@ import { useNavigate } from "react-router-dom";
 
 const Faq = () => {
   const navigate = useNavigate();
+
   const faqs = [
     {
       question: "¿Cómo puedo realizar un seguimiento de mi pedido?",
@@ -20,22 +21,39 @@ const Faq = () => {
       answer:
         "Sí, aceptamos devoluciones dentro de los 30 días posteriores a la compra. Consulta nuestra política de devoluciones para más detalles.",
     },
+    {
+      question: "¿Cómo puedo contactar al servicio de atención al cliente?",
+      answer:
+        "Puedes contactarnos a través de nuestro chat en vivo o llamando al 0800-555-1234. Nuestro horario de atención es de lunes a viernes, de 9:00 a 18:00.",
+    },
+    {
+      question: "¿Qué métodos de pago aceptan?",
+      answer:
+        "Aceptamos tarjetas de crédito, débito, transferencia bancaria y métodos digitales como PayPal y Mercado Pago.",
+    },
   ];
+
   return (
     <div className="faq-section">
       <h2>Preguntas Frecuentes</h2>
-      <a></a>
+      <p className="faq-description">
+        Encuentra las respuestas a las preguntas más comunes sobre nuestros
+        productos y servicios.
+      </p>
       <ul className="faq-list">
         {faqs.map((faq, index) => (
           <li key={index} className="faq-item">
-            <h3>{faq.question}</h3>
+            <div className="faq-question">
+              <span className="faq-icon">❓</span>
+              <h3>{faq.question}</h3>
+            </div>
             <p>{faq.answer}</p>
           </li>
         ))}
       </ul>
       <div className="back-to-main">
         <button className="main-menu-button" onClick={() => navigate("/")}>
-          Menú principal
+          Volver al Menú Principal
         </button>
       </div>
     </div>

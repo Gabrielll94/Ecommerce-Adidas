@@ -1,5 +1,6 @@
 import React from "react";
 import "./Footpage.css";
+import { useNavigate } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faFacebook,
@@ -9,12 +10,18 @@ import {
 } from "@fortawesome/free-brands-svg-icons";
 
 const Footpage = () => {
+  const navigate = useNavigate();
+  const handleNavigateToCalzado = () => {
+    navigate("/calzado");
+  };
   return (
     <div className="footpage">
       <div className="footpage-section">
         <h4>Productos</h4>
         <ul>
-          <li>Calzado</li>
+          <li onClick={handleNavigateToCalzado} className="clickeable-items">
+            Calzado
+          </li>
           <li>Zapatillas</li>
           <li>Ropa</li>
           <li>Accesorios</li>
