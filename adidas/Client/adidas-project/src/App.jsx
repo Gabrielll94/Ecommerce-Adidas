@@ -4,6 +4,7 @@ import Landingpage from "./Landingpage/landingpage.jsx";
 import { CartProvider } from "./ShoppingCart/cartContext.jsx";
 import Faq from "./pages/Faq.jsx";
 import Forum from "./Forum/Forum.jsx";
+import OrderTracking from "./OrderTracking/OrderTracking.jsx";
 
 const App = () => {
   return (
@@ -13,6 +14,7 @@ const App = () => {
           <Route path="/" element={<Landingpage />} />
           <Route path="/faq" element={<Faq />} />
           <Route path="/forum" element={<Forum />} />
+          <Route path="/seguimiento-pedido" element={<OrderTracking />} />
         </Routes>
       </Router>
     </CartProvider>

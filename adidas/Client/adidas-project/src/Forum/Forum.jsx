@@ -1,6 +1,7 @@
 import React from "react";
 import "./Forum.css";
 import image1 from "../assets/ZA.avif";
+import image2 from "../assets/fbold.avif";
 const Forum = () => {
   const shoes = [
     {
@@ -8,6 +9,12 @@ const Forum = () => {
       name: "Adidas",
       image: image1,
       price: "$100.000",
+    },
+    {
+      id: 2,
+      name: "Forum bold",
+      image: image2,
+      price: "$113.000",
     },
   ];
   return (

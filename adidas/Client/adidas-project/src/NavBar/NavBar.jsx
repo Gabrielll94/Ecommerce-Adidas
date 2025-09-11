@@ -107,7 +107,22 @@ const NavBar = () => {
           onMouseLeave={handleMouseLeave}
         >
           <a href="/oulet">OULET</a>
-          {activePanel === "Oulet" && <div className="dropdown-content"></div>}
+          {activePanel === "Oulet" && (
+            <div className="dropdown-content">
+              <a href="/oulet/Mujer">Todo el Calzado</a>
+              <a href="/oulet/Mujer">Zapatillas</a>
+              <a href="/oulet/Mujer">Lifestyle</a>
+              <a href="/oulet/Mujer">Running</a>
+              <a href="/oulet/Hombre">Todo el Calzado</a>
+              <a href="/oulet/Hombre">Zapatillas</a>
+              <a href="/oulet/Hombre">Lifestyle</a>
+              <a href="/oulet/Hombre">Running</a>
+              <a href="/oulet/Niños">Todo el Calzado</a>
+              <a href="/oulet/Niños">Zapatillas</a>
+              <a href="/oulet/Niños">Lifestyle</a>
+              <a href="/oulet/Niños">Botines</a>
+            </div>
+          )}
         </li>
         <div className="search-bar-container">
           <SearchBar />

@@ -11,27 +11,26 @@ import product1 from "../assets/RP.jpg";
 import product2 from "../assets/arg.jpg";
 import product3 from "../assets/AZNE.jpg";
 import { useNavigate } from "react-router-dom";
+import Modal from "react-modal";
+
+Modal.setAppElement("#root"); // Evita errores de accesibilidad en React-Modal
 
 const Landingpage = () => {
-  const [isCommentsOpen, setIsCommentsOpen] = useState(false);
-  const [selectedRating, setSelectedRating] = useState(null);
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [email, setEmail] = useState("");
   const navigate = useNavigate();
 
-  const handleCommentsToggle = () => {
-    setIsCommentsOpen(!isCommentsOpen);
+  const handleRegisterClick = () => {
+    setIsModalOpen(true);
   };
 
-  const handleSelectedRating = (rating) => {
-    setSelectedRating(rating);
+  const handleCloseModal = () => {
+    setIsModalOpen(false);
   };
 
-  const handleSendRating = () => {
-    if (selectedRating !== null) {
-      console.log(`Puntuacion enviada: ${selectedRating}`);
-      alert(`Puntuacion enviada: ${selectedRating}`);
-    } else {
-      alert("No has seleccionado una puntuación");
-    }
+  const handleEmailRegister = () => {
+    alert(`Registro con email: ${email}`);
+    setIsModalOpen(false);
   };
 
   const productsWithImages = productsData.map((product) => {
@@ -55,66 +54,7 @@ const Landingpage = () => {
   return (
     <div className="landing-page">
       <NavBar />
-      <div className={`comments-container ${isCommentsOpen ? "open" : ""}`}>
-        <div className="comments-header" onClick={handleCommentsToggle}>
-          COMENTARIOS
-        </div>
-        {isCommentsOpen && (
-          <div className="comments-content">
-            <p>Queremos tu opinion (buena o mala)</p>
-            <h1>Recomendarias adidas.com.ar a tus amigos y/o conocidos?</h1>
-            <div className="rating-label">Poco probable</div>
-            <div className="rating-container">
-              {[0, 1, 2, 3].map((num) => (
-                <div
-                  className={`rating-option ${
-                    selectedRating === num ? "selected" : ""
-                  }`}
-                  key={num}
-                  onClick={() => handleSelectedRating(num)}
-                >
-                  <div className="rating-circle"></div>
-                  <a href="#">{num}</a>
-                </div>
-              ))}
-            </div>
-            <div className="rating-label">Probable</div>
-            <div className="rating-container">
-              {[4, 5, 6].map((num) => (
-                <div
-                  className={`rating-option ${
-                    selectedRating === num ? "selected" : ""
-                  }`}
-                  key={num}
-                  onClick={() => handleSelectedRating(num)}
-                >
-                  <div className="rating-circle"></div>
-                  <a href="#">{num}</a>
-                </div>
-              ))}
-            </div>
-            <div className="rating-label">Muy probable</div>
-            <div className="rating-container">
-              {[7, 8, 9, 10].map((num) => (
-                <div
-                  className={`rating-option ${
-                    selectedRating === num ? "selected" : ""
-                  }`}
-                  key={num}
-                  onClick={() => handleSelectedRating(num)}
-                >
-                  <div className="rating-circle"></div>
-                  <a href="#">{num}</a>
-                </div>
-              ))}
-            </div>
-            <button className="send-rating-button" onClick={handleSendRating}>
-              {" "}
-              Enviar Puntuacion
-            </button>
-          </div>
-        )}
-      </div>
+
       {/* Banner principal */}
       <section className="banner">
         <div className="banner-content">
@@ -135,13 +75,39 @@ const Landingpage = () => {
         </ul>
       </section>
 
-      {/* Seccion de ofertas */}
+      {/* Sección de ofertas */}
       <section className="offers">
-        <h1>UNETE AL CLUB Y CONSIGUE 300 PUNTOS DE BIENVENIDA</h1>
-        <button className="register-button">REGÍSTRATE GRATIS ➡</button>
+        <h1>ÚNETE AL CLUB Y CONSIGUE 300 PUNTOS DE BIENVENIDA</h1>
+        <button className="register-button" onClick={handleRegisterClick}>
+          REGÍSTRATE GRATIS ➡
+        </button>
       </section>
 
-      {/* Seccion de Productos */}
+      {/* Modal de registro */}
+      <Modal
+        isOpen={isModalOpen}
+        onRequestClose={handleCloseModal}
+        className="register-modal"
+        overlayClassName="register-modal-overlay"
+      >
+        <div className="modal-content">
+          <h2>Únete al Club</h2>
+          <button className="social-login">Iniciar sesión con Apple</button>
+          <button className="social-login">Iniciar sesión con Facebook</button>
+          <button className="social-login">Iniciar sesión con Google</button>
+          <h3>Regístrate con tu correo electrónico</h3>
+          <input
+            type="email"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+            placeholder="Ingresa tu correo electrónico"
+          />
+          <button onClick={handleEmailRegister}>Registrarse</button>
+          <button onClick={handleCloseModal}>Cerrar</button>
+        </div>
+      </Modal>
+
+      {/* Sección de productos */}
       <section className="products-section">
         <h1>Productos</h1>
         <div className="products-grid">
@@ -151,7 +117,7 @@ const Landingpage = () => {
         </div>
       </section>
 
-      {/* Seccion de carrio */}
+      {/* Sección de carrito */}
       <section className="cart-section">
         <Cart />
       </section>
