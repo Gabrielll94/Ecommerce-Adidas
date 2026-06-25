@@ -143,6 +143,19 @@ const Footpage = () => {
           </a>
         </div>
       </div>
+      <div className="footer-bottom">
+        <a href="#">Configuración de las cookies</a>
+        <span>|</span>
+        <a href="#">Nuestros datos</a>
+        <span>|</span>
+        <a href="#">Términos y condiciones</a>
+        <span>|</span>
+        <a href="#">Términos y condiciones promociones</a>
+        <span>|</span>
+        <a href="#">Política de cookies</a>
+        <span>|</span>
+        <a href="#">Política de privacidad</a>
+      </div>
     </div>
   );
 };

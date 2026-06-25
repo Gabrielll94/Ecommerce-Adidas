@@ -1,9 +1,7 @@
 import React, { useState } from "react";
 import "./landingpage.css";
-import NavBar from "../NavBar/NavBar";
 import adidasImage from "../assets/admessi.jpg";
 import adidasImage1 from "../assets/adidas1.jpg";
-import Footpage from "../FootPage/Footpage";
 import Products from "../Products/Products";
 import Cart from "../Cart/Cart";
 import productsData from "../assets/products.json";
@@ -53,8 +51,6 @@ const Landingpage = () => {
 
   return (
     <div className="landing-page">
-      <NavBar />
-
       {/* Banner principal */}
       <section className="banner">
         <div className="banner-content">
@@ -95,6 +91,9 @@ const Landingpage = () => {
           <button className="social-login">Iniciar sesión con Apple</button>
           <button className="social-login">Iniciar sesión con Facebook</button>
           <button className="social-login">Iniciar sesión con Google</button>
+          <div className="divider">
+            <span>o</span>
+          </div>
           <h3>Regístrate con tu correo electrónico</h3>
           <input
             type="email"
@@ -102,8 +101,12 @@ const Landingpage = () => {
             onChange={(e) => setEmail(e.target.value)}
             placeholder="Ingresa tu correo electrónico"
           />
-          <button onClick={handleEmailRegister}>Registrarse</button>
-          <button onClick={handleCloseModal}>Cerrar</button>
+          <button className="submit-button" onClick={handleEmailRegister}>
+            Registrarse
+          </button>
+          <button className="close-modal" onClick={handleCloseModal}>
+            ×
+          </button>
         </div>
       </Modal>
 
@@ -121,11 +124,6 @@ const Landingpage = () => {
       <section className="cart-section">
         <Cart />
       </section>
-
-      {/* Footer */}
-      <footer className="footer">
-        <Footpage />
-      </footer>
     </div>
   );
 };

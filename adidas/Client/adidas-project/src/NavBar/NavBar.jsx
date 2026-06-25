@@ -5,12 +5,11 @@ import Logo from "../assets/Logo_Adidas.png";
 import "./NavBar.css";
 import SearchBar from "../SearchBar/SearchBar";
 import { cartContext } from "../ShoppingCart/cartContext";
+import Carousel from "../Carousel/Carousel";
 
-const NavBar = () => {
+const NavBar = ({ setShowLoginModal }) => {
   const { cartItems } = useContext(cartContext);
   const [activePanel, setActivePanel] = useState("");
-  const [showLoginModal, setShowLoginModal] = useState(false);
-  const [userName, setUserName] = useState("");
 
   const handleMouseEnter = (panel) => setActivePanel(panel);
   const handleMouseLeave = () => setActivePanel("");
@@ -18,9 +17,12 @@ const NavBar = () => {
   return (
     <>
       <nav className="navbar">
+        <Carousel />
         <div className="top-section">
           <div className="logo-container">
-            <img src={Logo} alt="Adidas Logo" className="logo" />
+            <a href="/">
+              <img src={Logo} alt="Adidas Logo" className="logo" />
+            </a>
           </div>
           <div className="top-links">
             <a href="/faq" className="top-link">
@@ -46,6 +48,17 @@ const NavBar = () => {
               <div className="dropdown-content">
                 <a href="/mujer/ropa">Ropa</a>
                 <a href="/mujer/zapatillas">Zapatillas</a>
+                <div className="submenu">
+                  <a href="mujer/zapatillas/calzado" className="submenu tittle">
+                    Calzado ▸
+                  </a>
+                  <div className="submenu-content">
+                    <a href="/mujer/calzado/30-off">Hasta 30% off</a>
+                    <a href="/mujer/calzado/zapatillas">Zapatillas</a>
+                    <a href="/mujer/calzado/outdoor">Outdoor</a>
+                    <a href="/mujer/calzado/menos-99999">Menos de 99.999</a>
+                  </div>
+                </div>
                 <a href="/mujer/accesorios">Accesorios</a>
                 <a href="/mujer/nuevo">Nuevo</a>
               </div>
@@ -61,7 +74,25 @@ const NavBar = () => {
             {activePanel === "Hombre" && (
               <div className="dropdown-content">
                 <a href="/hombre/ropa">Botines</a>
-                <a href="/hombre/novedades">Camisetas de Futbol</a>
+                <div className="submenu">
+                  <a
+                    href="/hombre/novedades/encontra-a-tu-equipo"
+                    className="submenu-title"
+                  >
+                    Encontra a tu equipo ▸
+                  </a>
+                  <div className="submenu-content">
+                    <a href="/hombre/novedades/encontra a tu equipo/seleccion-argentina">
+                      Seleccion Argentina
+                    </a>
+                    <a href="/hombre/novedades/encontra a tu equipo/river-plate">
+                      River Plate ⚪🔴⚪
+                    </a>
+                    <a href="/hombre/novedades/encontra a tu equipo/boca">
+                      Boca Juniors 🔵🟡
+                    </a>
+                  </div>
+                </div>
                 <a href="/hombre/accesorios">Bolsos y mochilas</a>
                 <a href="/hombre/futbol">Running</a>
                 <a href="/hombre/imperdibles">Seleccion Argentina</a>
@@ -133,46 +164,6 @@ const NavBar = () => {
           </div>
         </ul>
       </nav>
-
-      {/* MODAL LOGIN */}
-      {showLoginModal && (
-        <div className="login-modal">
-          <div className="login-box">
-            <button
-              className="close-button"
-              onClick={() => setShowLoginModal(false)}
-            >
-              X
-            </button>
-            <h3>Iniciá sesión</h3>
-
-            {!userName ? (
-              <div className="social-buttons">
-                <button onClick={() => setUserName("Usuario Google")}>
-                  <img
-                    src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/google/google-original.svg"
-                    alt="Google"
-                  />
-                </button>
-                <button onClick={() => setUserName("Usuario Facebook")}>
-                  <img
-                    src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/facebook/facebook-original.svg"
-                    alt="Facebook"
-                  />
-                </button>
-                <button onClick={() => setUserName("Usuario Apple")}>
-                  <img
-                    src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/apple/apple-original.svg"
-                    alt="Apple"
-                  />
-                </button>
-              </div>
-            ) : (
-              <p>¡Hola, {userName}!</p>
-            )}
-          </div>
-        </div>
-      )}
     </>
   );
 };

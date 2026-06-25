@@ -2,12 +2,15 @@ import React, { useContext } from "react";
 import PropTypes from "prop-types";
 import "./Products.css";
 import { cartContext } from "../ShoppingCart/cartContext";
+import { useNavigate } from "react-router-dom";
 
 const Products = ({ product }) => {
+  const navigate = useNavigate();
   const { addToCart } = useContext(cartContext);
 
   const handleAddToCart = () => {
     addToCart(product);
+    navigate("/cart");
   };
 
   return (

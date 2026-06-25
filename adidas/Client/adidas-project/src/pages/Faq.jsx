@@ -51,6 +51,24 @@ const Faq = () => {
           </li>
         ))}
       </ul>
+      <div className="faq-categories">
+        <h2>Explorar por categoría</h2>
+
+        <div className="faq-categories-grid">
+          <div className="faq-category">Adiclub</div>
+          <div className="faq-category">Devoluciones y reembolsos</div>
+          <div className="faq-category">Entregas</div>
+          <div className="faq-category">🎁 Gift Card</div>
+          <div className="faq-category">💳 Proceso de pago</div>
+          <div className="faq-category">📦 Pedidos</div>
+          <div className="faq-category">Voucher y promociones</div>
+          <div className="faq-category">Productos</div>
+          <div className="faq-category">Personalización de productos AFA</div>
+          <div className="faq-category">Cuentas y suscripciones</div>
+          <div className="faq-category">Información de la empresa</div>
+          <div className="faq-category">🏃 Adidas Running App</div>
+        </div>
+      </div>
       <div className="back-to-main">
         <button className="main-menu-button" onClick={() => navigate("/")}>
           Volver al Menú Principal
